@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: micronaut.cache.hazelcast.groovy
+---
+testFramework: spock
+sourceLanguage: groovy
