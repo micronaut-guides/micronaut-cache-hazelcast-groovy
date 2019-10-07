@@ -10,6 +10,7 @@ version "0.1"
 group "micronaut.cache.hazelcast.groovy"
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
 }
@@ -37,6 +38,9 @@ dependencies {
     testImplementation "io.micronaut.test:micronaut-test-spock"
     testImplementation "io.micronaut.test:micronaut-test-junit5"
     testRuntimeOnly "org.junit.vintage:junit-vintage-engine:5.5.0"
+
+    compile 'io.micronaut.cache:micronaut-cache-core:1.0.0.BUILD-SNAPSHOT'
+    compile 'io.micronaut.cache:micronaut-cache-hazelcast:1.0.0.BUILD-SNAPSHOT'
 }
 
 test.classpath += configurations.developmentOnly
