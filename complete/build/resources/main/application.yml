@@ -1,6 +1,0 @@
-micronaut:
-  application:
-    name: micronaut-cache-hazelcast-groovy
-  caches:
-    my-cache:
-      maximumSize: 20
