@@ -1,6 +1,8 @@
 micronaut:
   application:
     name: micronaut-cache-hazelcast-groovy
-  caches:
-    my-cache:
-      maximumSize: 20
+---
+hazelcast:
+  instanceName: "my-cache"
+  network:
+    addresses: ['127.0.0.1:5701']

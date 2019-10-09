@@ -1,10 +1,13 @@
 package micronaut.cache.hazelcast.groovy.service
 
-import io.micronaut.cache.DefaultCacheManager
-import io.micronaut.cache.DefaultSyncCache
+import com.hazelcast.core.Hazelcast
+import com.hazelcast.core.HazelcastInstance
+import com.hazelcast.core.IMap
 import io.micronaut.cache.SyncCache
+import io.micronaut.cache.hazelcast.HazelcastManager
 import io.micronaut.test.annotation.MicronautTest
 import micronaut.cache.hazelcast.groovy.Application
+import spock.lang.Shared
 import spock.lang.Specification
 
 import javax.inject.Inject
@@ -17,11 +20,22 @@ class MessageServiceSpec extends Specification {
     @Inject
     MessageService messageService
     @Inject
-    DefaultCacheManager defaultCacheManager
+    HazelcastManager hazelcastManager
+
+    @Shared
+    HazelcastInstance hazelcastServerInstance
+
+    def setupSpec() {
+        hazelcastServerInstance = Hazelcast.newHazelcastInstance()
+    }
+
+    def cleanupSpec() {
+        hazelcastServerInstance.shutdown()
+    }
 
     def setup() {
         messageService.invocationCounter = 0
-        SyncCache<DefaultSyncCache> cache = defaultCacheManager.getCache("my-cache")
+        SyncCache<IMap<Object, Object>> cache = hazelcastManager.getCache("my-cache")
         cache.invalidateAll()
     }
 
