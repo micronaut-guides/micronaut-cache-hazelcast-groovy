@@ -40,7 +40,7 @@ dependencies {
     testRuntimeOnly "org.junit.vintage:junit-vintage-engine:5.5.0"
 
     compile 'io.micronaut.cache:micronaut-cache-core:1.0.0.BUILD-SNAPSHOT'
-    compile 'io.micronaut.cache:micronaut-cache-hazelcast:1.0.0.BUILD-SNAPSHOT'
+    //compile 'io.micronaut.cache:micronaut-cache-hazelcast:1.0.0.BUILD-SNAPSHOT'
 }
 
 test.classpath += configurations.developmentOnly
