@@ -2,9 +2,13 @@ micronaut:
   application:
     name: micronaut-cache-hazelcast-groovy
 ---
+# tag::config[]
 hazelcast:
   instanceName: "my-cache"
   network:
     addresses: ['127.0.0.1:5701']
+# end::config[]
+# tag::moreConfig[]
     connectionTimeout: 9999
     redoOperation: true
+# end::moreConfig[]

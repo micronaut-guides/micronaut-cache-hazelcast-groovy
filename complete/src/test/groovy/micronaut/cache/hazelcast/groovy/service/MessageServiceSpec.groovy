@@ -12,6 +12,7 @@ import spock.lang.Specification
 
 import javax.inject.Inject
 
+//tag::test[]
 @MicronautTest(application = Application)
 class MessageServiceSpec extends Specification {
 
@@ -61,6 +62,7 @@ class MessageServiceSpec extends Specification {
         message == "myMessageAgain_FromInsideMethodReturnMessage"
         messageService.invocationCounter == 2
     }
+    //tag::test[]
 
     def "test method cache invalidate"() {
         when: 'called the first time'

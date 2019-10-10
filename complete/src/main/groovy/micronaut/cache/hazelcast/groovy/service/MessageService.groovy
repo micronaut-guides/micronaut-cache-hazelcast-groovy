@@ -11,19 +11,19 @@ class MessageService {
 
     int invocationCounter = 0
 
-    @Cacheable("my-cache")
+    @Cacheable("my-cache") // <1>
     String returnMessage(String message) {
         ++invocationCounter
         message+"_FromInsideMethodReturnMessage"
     }
 
-    @CacheInvalidate(value="my-cache", all=true)
+    @CacheInvalidate(value="my-cache", all=true) // <2>
     String invalidateAndReturnMessage(String message) {
         ++invocationCounter
         message+"_FromInsideMethodInvalidateAndReturnMessage"
     }
 
-    @CachePut("my-cache")
+    @CachePut("my-cache") // <3>
     String putReturnMessage(String message) {
         ++invocationCounter
         message+"_FromInsideMethodPutAndReturnMessage"
