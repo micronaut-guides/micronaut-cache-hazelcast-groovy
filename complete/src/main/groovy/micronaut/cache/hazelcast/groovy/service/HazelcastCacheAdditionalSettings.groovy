@@ -7,12 +7,12 @@ import io.micronaut.context.event.BeanCreatedEventListener
 import javax.inject.Singleton
 
 @Singleton
-class HazelcastAdditionalSettings implements BeanCreatedEventListener<HazelcastClientConfiguration> {
+class HazelcastCacheAdditionalSettings implements BeanCreatedEventListener<HazelcastClientConfiguration> { // <1>
 
     @Override
     HazelcastClientConfiguration onCreated(BeanCreatedEvent<HazelcastClientConfiguration> event) {
-        HazelcastClientConfiguration hazelcastClientConfiguration = event.getBean()
-        hazelcastClientConfiguration.getNetworkConfig().setConnectionTimeout(8888)
+        HazelcastClientConfiguration hazelcastClientConfiguration = event.getBean() // <2>
+        hazelcastClientConfiguration.getNetworkConfig().setConnectionTimeout(8888) // <3>
         hazelcastClientConfiguration
     }
 }

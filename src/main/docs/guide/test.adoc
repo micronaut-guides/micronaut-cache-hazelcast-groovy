@@ -1,1 +1,13 @@
 TODO: Complete the guide
+
+[source, groovy]
+.src/test/groovy/micronaut/cache/hazelcast/groovy/service/MessageServiceSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/micronaut/cache/hazelcast/groovy/service/MessageServiceSpec.groovy[tag=test]
+}
+----
+
+<1> Embedded Hazelcast node cluster.
+<2> Shutdown the Hazelcast node cluster.
+
+NOTE: To test the application use the `./gradlew test` command.

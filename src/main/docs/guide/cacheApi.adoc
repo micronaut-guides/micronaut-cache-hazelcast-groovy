@@ -1,1 +1,12 @@
 TODO: Complete the guide
+
+[source, groovy]
+.src/main/groovy/micronaut/cache/hazelcast/groovy/service/MessageService.groovy
+----
+include::{sourceDir}/src/main/groovy/micronaut/cache/hazelcast/groovy/service/MessageService.groovy[]
+----
+
+<1> Cache the return value
+<2> Invalidate all members of the cache before placing the new value
+<3> Always execute this method and update the cache with the return value. Generally use this annotation when stale data
+is to be updated, without blowing away the whole cache.

@@ -11,6 +11,4 @@ test:
   title: Test the Cache
 moreConfigure:
   title: More Hazelcast Configuration
-runningTheApp:
-  title: Running the Application
 next: Where To Go From Here?

@@ -1,1 +1,19 @@
 TODO: Complete the guide
+
+[source, yml]
+.src/main/resources/application.yml
+----
+include::{sourceDir}/src/main/resources/application.yml[tag=moreConfig]
+----
+
+<1> added properties to the Hazelcast Client
+
+[source, groovy]
+.src/main/groovy/micronaut/cache/hazelcast/groovy/service/HazelcastCacheAdditionalSettings.groovy
+----
+include::{sourceDir}/src/main/groovy/micronaut/cache/hazelcast/groovy/service/HazelcastCacheAdditionalSettings.groovy[]
+----
+
+<1> Implement BeanCreatedEventListener to trigger on creation
+<2> Retrieve the bean from the event
+<3> Set any property needed

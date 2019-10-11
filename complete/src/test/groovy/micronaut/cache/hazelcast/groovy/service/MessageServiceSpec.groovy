@@ -27,11 +27,11 @@ class MessageServiceSpec extends Specification {
     HazelcastInstance hazelcastServerInstance
 
     def setupSpec() {
-        hazelcastServerInstance = Hazelcast.newHazelcastInstance()
+        hazelcastServerInstance = Hazelcast.newHazelcastInstance() // <1>
     }
 
     def cleanupSpec() {
-        hazelcastServerInstance.shutdown()
+        hazelcastServerInstance.shutdown() // <2>
     }
 
     def setup() {
@@ -62,7 +62,7 @@ class MessageServiceSpec extends Specification {
         message == "myMessageAgain_FromInsideMethodReturnMessage"
         messageService.invocationCounter == 2
     }
-    //tag::test[]
+    //end::test[]
 
     def "test method cache invalidate"() {
         when: 'called the first time'
