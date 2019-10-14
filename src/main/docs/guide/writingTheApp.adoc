@@ -1,2 +1,2 @@
-The app was created with Micronaut CLI using the `--features=groovy` flag. The `/initial` folder was created so you as a developer
+The app was created with Micronaut CLI using the `--lang groovy` flag. The `/initial` folder was created as such so you as a developer
 can follow along with the coding steps.
