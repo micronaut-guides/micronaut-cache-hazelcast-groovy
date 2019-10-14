@@ -14,3 +14,11 @@ needed to get started.
 ----
 include::{sourceDir}/src/main/resources/application.yml[tag=config]
 ----
+
+[NOTE]
+====
+Alternatively, a Micronaut application can be created with the https://docs.micronaut.io/latest/guide/index.html#quickStart[CLI] using the `--feature hazelcast` flag. Create the application with the command
+below. This will create a Micronaut application with the `build.gradle` and `application.yml` configured for Hazelcast.
+
+- `mn create-app testapp --lang groovy --features hazelcast`
+====
