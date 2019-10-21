@@ -1,6 +1,6 @@
 We can verify that the cache works as expected with spock tests.
 
-For the test, we will create an embedded Hazelcast server at the beginning in the `setupSpec()` method. This create an instance
+For the test, we will create an embedded Hazelcast server at the beginning in the `setupSpec()` method. This creates an instance
 on the default port `5701`. Note in production it is more likely that a Hazelcast node cluster will be mounted on a separate server resource.
 In the `cleanupSpec()`, the instance is shutdown.
 
